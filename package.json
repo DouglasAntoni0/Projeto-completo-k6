@@ -1,0 +1,41 @@
+{
+  "name": "projeto-completo-k6",
+  "version": "1.0.0",
+  "description": "Suíte completa de testes de performance com k6",
+  "author": "Douglas",
+  "license": "MIT",
+  "scripts": {
+    "smoke": "k6 run tests/types/smoke-test.js",
+    "load": "k6 run tests/types/load-test.js",
+    "stress": "k6 run tests/types/stress-test.js",
+    "spike": "k6 run tests/types/spike-test.js",
+    "soak": "k6 run tests/types/soak-test.js",
+    "breakpoint": "k6 run tests/types/breakpoint-test.js",
+    "scenarios": "k6 run tests/features/scenarios-test.js",
+    "thresholds": "k6 run tests/features/thresholds-test.js",
+    "custom-metrics": "k6 run tests/features/custom-metrics-test.js",
+    "groups-tags": "k6 run tests/features/groups-tags-test.js",
+    "checks": "k6 run tests/features/checks-test.js",
+    "data-param": "k6 run tests/features/data-parameterization.js",
+    "lifecycle": "k6 run tests/features/lifecycle-test.js",
+    "rest-api": "k6 run tests/protocols/rest-api-test.js",
+    "websocket": "k6 run tests/protocols/websocket-test.js",
+    "multi-scenario": "k6 run tests/advanced/multi-scenario-test.js",
+    "hybrid": "k6 run tests/advanced/hybrid-test.js",
+    "all-types": "npm run smoke && npm run load && npm run stress && npm run spike",
+    "all-features": "npm run scenarios && npm run thresholds && npm run custom-metrics && npm run groups-tags && npm run checks && npm run data-param && npm run lifecycle"
+  },
+  "devDependencies": {
+    "@types/k6": "^0.54.0"
+  },
+  "keywords": [
+    "k6",
+    "performance-testing",
+    "load-testing",
+    "stress-testing",
+    "grafana",
+    "quality-assurance",
+    "qa",
+    "testing"
+  ]
+}

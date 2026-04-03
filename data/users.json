@@ -1,0 +1,40 @@
+{
+  "users": [
+    { "id": 1, "username": "maria.silva", "email": "maria.silva@email.com", "password": "Senha@2024!", "role": "admin", "age": 28 },
+    { "id": 2, "username": "joao.santos", "email": "joao.santos@email.com", "password": "J0@oS4nt0s!", "role": "user", "age": 34 },
+    { "id": 3, "username": "ana.oliveira", "email": "ana.oliveira@email.com", "password": "An@Oliv3ir@", "role": "user", "age": 22 },
+    { "id": 4, "username": "carlos.pereira", "email": "carlos.pereira@email.com", "password": "C@rl0sP3r!", "role": "editor", "age": 41 },
+    { "id": 5, "username": "fernanda.costa", "email": "fernanda.costa@email.com", "password": "F3rn@nd@C!", "role": "user", "age": 31 },
+    { "id": 6, "username": "rafael.lima", "email": "rafael.lima@email.com", "password": "R@f@3lL1m@", "role": "admin", "age": 29 },
+    { "id": 7, "username": "juliana.souza", "email": "juliana.souza@email.com", "password": "Jul1@n@S0z", "role": "user", "age": 26 },
+    { "id": 8, "username": "pedro.almeida", "email": "pedro.almeida@email.com", "password": "P3dr0Alm3!", "role": "editor", "age": 38 },
+    { "id": 9, "username": "camila.rocha", "email": "camila.rocha@email.com", "password": "C@m1l@R0ch", "role": "user", "age": 24 },
+    { "id": 10, "username": "lucas.martins", "email": "lucas.martins@email.com", "password": "Luc@sM@rt!", "role": "user", "age": 33 },
+    { "id": 11, "username": "beatriz.ferreira", "email": "beatriz.ferreira@email.com", "password": "B3@F3rr31r", "role": "admin", "age": 27 },
+    { "id": 12, "username": "gustavo.ribeiro", "email": "gustavo.ribeiro@email.com", "password": "Gust@v0R1b", "role": "user", "age": 36 },
+    { "id": 13, "username": "isabela.gomes", "email": "isabela.gomes@email.com", "password": "Is@b3l@G0m", "role": "user", "age": 30 },
+    { "id": 14, "username": "thiago.araujo", "email": "thiago.araujo@email.com", "password": "Th1@g0@r@u", "role": "editor", "age": 44 },
+    { "id": 15, "username": "larissa.barbosa", "email": "larissa.barbosa@email.com", "password": "L@r1ss@B@r", "role": "user", "age": 25 },
+    { "id": 16, "username": "matheus.cardoso", "email": "matheus.cardoso@email.com", "password": "M@th3usC@r", "role": "user", "age": 32 },
+    { "id": 17, "username": "amanda.nascimento", "email": "amanda.nascimento@email.com", "password": "@m@nd@N@sc", "role": "admin", "age": 35 },
+    { "id": 18, "username": "felipe.mendes", "email": "felipe.mendes@email.com", "password": "F3l1p3M3nd", "role": "user", "age": 23 },
+    { "id": 19, "username": "patricia.correia", "email": "patricia.correia@email.com", "password": "P@tr1c1@C0", "role": "editor", "age": 40 },
+    { "id": 20, "username": "rodrigo.teixeira", "email": "rodrigo.teixeira@email.com", "password": "R0dr1g0T31", "role": "user", "age": 37 },
+    { "id": 21, "username": "vanessa.dias", "email": "vanessa.dias@email.com", "password": "V@n3ss@D1@", "role": "user", "age": 29 },
+    { "id": 22, "username": "gabriel.moreira", "email": "gabriel.moreira@email.com", "password": "G@br13lM0r", "role": "admin", "age": 42 },
+    { "id": 23, "username": "renata.freitas", "email": "renata.freitas@email.com", "password": "R3n@t@Fr31", "role": "user", "age": 26 },
+    { "id": 24, "username": "daniel.vieira", "email": "daniel.vieira@email.com", "password": "D@n13lV13!", "role": "user", "age": 31 },
+    { "id": 25, "username": "carolina.lopes", "email": "carolina.lopes@email.com", "password": "C@r0l1n@L0", "role": "editor", "age": 28 }
+  ],
+  "loginCredentials": [
+    { "email": "eve.holt@reqres.in", "password": "cityslicka" },
+    { "email": "emma.wong@reqres.in", "password": "pistol" },
+    { "email": "charles.morris@reqres.in", "password": "pistol" },
+    { "email": "tracey.ramos@reqres.in", "password": "pistol" }
+  ],
+  "registerCredentials": [
+    { "email": "eve.holt@reqres.in", "password": "pistol" },
+    { "email": "george.bluth@reqres.in", "password": "pistol" },
+    { "email": "janet.weaver@reqres.in", "password": "pistol" }
+  ]
+}

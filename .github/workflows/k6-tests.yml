@@ -1,0 +1,145 @@
+name: Performance Tests - k6
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Tipo de teste'
+        required: true
+        default: 'smoke'
+        type: choice
+        options:
+          - smoke
+          - load
+          - stress
+          - spike
+          - scenarios
+          - thresholds
+          - custom-metrics
+          - groups-tags
+          - checks
+          - rest-api
+          - all-features
+
+jobs:
+  smoke-test:
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'pull_request' ||
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.test_type == 'smoke')
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Executar Smoke Test
+        run: k6 run tests/types/smoke-test.js
+
+      - name: Upload Relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-report
+          path: reports/
+          retention-days: 30
+
+  load-test:
+    name: Load Test
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.test_type == 'load')
+    needs: smoke-test
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Executar Load Test
+        run: k6 run tests/types/load-test.js
+
+      - name: Upload Relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-report
+          path: reports/
+          retention-days: 30
+
+  feature-tests:
+    name: Feature Tests
+    runs-on: ubuntu-latest
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.test_type == 'all-features')
+    needs: smoke-test
+
+    strategy:
+      matrix:
+        test:
+          - { name: "Scenarios", script: "tests/features/scenarios-test.js" }
+          - { name: "Thresholds", script: "tests/features/thresholds-test.js" }
+          - { name: "Custom Metrics", script: "tests/features/custom-metrics-test.js" }
+          - { name: "Groups Tags", script: "tests/features/groups-tags-test.js" }
+          - { name: "Checks", script: "tests/features/checks-test.js" }
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Executar ${{ matrix.test.name }}
+        run: k6 run ${{ matrix.test.script }}
+
+      - name: Upload Relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: feature-test-${{ matrix.test.name }}-report
+          path: reports/
+          retention-days: 30
+
+  stress-test:
+    name: Stress Test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_type == 'stress'
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Executar Stress Test
+        run: k6 run tests/types/stress-test.js
+
+      - name: Upload Relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stress-test-report
+          path: reports/
+          retention-days: 30
+
+  rest-api-test:
+    name: REST API Test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_type == 'rest-api'
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Executar REST API Test
+        run: k6 run tests/protocols/rest-api-test.js
+
+      - name: Upload Relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rest-api-test-report
+          path: reports/
+          retention-days: 30

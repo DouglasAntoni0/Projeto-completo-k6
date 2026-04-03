@@ -1,0 +1,21 @@
+id,title,body,userId
+1,Introdução ao k6,"O k6 é uma ferramenta moderna de testes de performance desenvolvida pela Grafana Labs.",1
+2,Testes de Carga Eficientes,"Aprenda como criar testes de carga que simulam tráfego realista no seu sistema.",2
+3,Métricas Customizadas no k6,"Como usar Counter Gauge Rate e Trend para monitorar métricas de negócio.",3
+4,Cenários Avançados,"Domine os 6 tipos de executors do k6 para simular qualquer padrão de tráfego.",4
+5,Thresholds e SLOs,"Defina critérios de aprovação baseados nos seus Service Level Objectives.",5
+6,Performance Testing no CI/CD,"Integre testes de performance no seu pipeline usando GitHub Actions.",6
+7,Monitoramento com Grafana,"Visualize os resultados dos seus testes k6 em dashboards Grafana.",7
+8,WebSocket Testing,"Como testar conexões WebSocket de forma eficiente com k6.",8
+9,Data Parameterization,"Use SharedArray e dados externos para tornar seus testes mais realistas.",9
+10,Boas Práticas de Performance,"Dicas e padrões para um projeto de performance testing profissional.",10
+11,Arquitetura de Microsserviços,"Estratégias de teste de performance para sistemas distribuídos.",1
+12,Teste de APIs REST,"Cobertura completa de endpoints REST com validações robustas.",2
+13,Spike Testing na Prática,"Como preparar seu sistema para picos repentinos de tráfego.",3
+14,Soak Testing e Memory Leaks,"Identifique vazamentos de memória com testes de longa duração.",4
+15,Relatórios HTML com k6,"Gere relatórios visuais profissionais usando handleSummary.",5
+16,Tags e Grupos no k6,"Organize seus testes com tags e grupos para análise granular.",6
+17,Stress Testing,"Descubra os limites do seu sistema com testes de estresse.",7
+18,Smoke Tests Automatizados,"Execute smoke tests automaticamente a cada deploy.",8
+19,Performance Budget,"Estabeleça orçamentos de performance para sua aplicação.",9
+20,Debugging de Testes k6,"Técnicas para debugar e otimizar seus scripts de teste k6.",10
