@@ -132,7 +132,7 @@ docker pull grafana/k6
 2. **Clonar o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/Projeto-completo-k6.git
+git clone https://github.com/DouglasAntoni0/Projeto-completo-k6.git
 cd Projeto-completo-k6
 ```
 
